@@ -7,7 +7,7 @@ export const GlobalStyle = createGlobalStyle`
     border: 1px solid black;
     max-width: 430px;
     min-height: 100vh;
-    max-height: 100%;
+    // max-height: 100%;
   }
 
   * {

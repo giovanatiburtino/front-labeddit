@@ -46,6 +46,10 @@ export const SignupContainer = styled.section`
         line-height: 25px;
         color: #FFFFFF;
         margin-top: 1.5rem;
+
+        :hover{
+            cursor: pointer;
+        }
     }
 
 
@@ -69,6 +73,10 @@ export const SignupContainer = styled.section`
         font-size: 14px;
         line-height: 19px;
         color: #000000;
+
+        input:hover{
+            cursor: pointer;
+        }
     }
 
     .agreement-checkbox input{

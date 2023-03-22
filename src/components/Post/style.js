@@ -33,12 +33,12 @@ export const PostDetails = styled.div`
 
 export const LikeDislikeContainer = styled.div`
     width: 98px;
-    height: 27.89px;
+    height: 28px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 4.66667px;
-    gap: 15.92px;
+    gap: 8px;
     border: 0.796748px solid #ECECEC;
     border-radius: 28px;
 

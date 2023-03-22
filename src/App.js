@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
     const token = window.localStorage.getItem(TOKEN_NAME);
 
-    if(token){
+    if (token) {
       fetchPosts();
     }
   }, [])
@@ -25,7 +25,7 @@ function App() {
         }
       };
 
-      const response = await axios.get(BASE_URL, + "/posts", config);
+      const response = await axios.get(BASE_URL + "/posts", config);
 
       setPosts(response.data)
     } catch (error) {

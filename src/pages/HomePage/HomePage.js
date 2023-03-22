@@ -69,6 +69,12 @@ export default function HomePage(){
           {posts.map((post) => {
             return <Post key={post.id} post={post}/>
           })}
+        {window.addEventListener('scroll', () => {
+                const scrollable = document.documentElement.scrollHeight = window.innerHeight
+                const scroll = window.scrollY
+
+                console.log(scroll)
+        })}
         </PostContainer>
     </section>
   );
