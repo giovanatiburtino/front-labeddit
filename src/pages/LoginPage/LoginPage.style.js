@@ -29,8 +29,8 @@ export const LoginContainer = styled.section`
     }
 
     input{
-        width: 363px;
-        height: 60px;
+        width: 22.688rem;
+        height: 3.75rem;
         background: #FFFFFF;
         border: 1px solid #D5D8DE;
         border-radius: 4px;

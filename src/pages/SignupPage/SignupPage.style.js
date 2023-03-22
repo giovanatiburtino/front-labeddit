@@ -8,7 +8,7 @@ export const SignupContainer = styled.section`
 
     .header-signup-container{
         margin-top: 2rem;
-        margin-bottom: 10rem;
+        margin-bottom: 5rem;
     }
 
     h1{
