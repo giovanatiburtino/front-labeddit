@@ -6,8 +6,12 @@ import DislikeIcon from "../../assets/dislike.svg"
 import CommentIcon from "../../assets/comment.svg"
 import { GlobalContext } from '../../contexts/GlobalContext'
 import { BASE_URL, TOKEN_NAME } from '../../constants/url'
+import { goToCommentPage } from '../../routes/coordinator'
+import { useNavigate } from 'react-router-dom'
 
 function Post(props){
+    const navigate = useNavigate()
+
     const { post } = props
 
     const context = useContext(GlobalContext)
@@ -56,7 +60,9 @@ function Post(props){
                 </button>
             </LikeDislikeContainer>
             <CommentButtonContainer>
+              <button onClick={() => goToCommentPage(navigate, post.id)}>
                 <img src={CommentIcon} alt="Botão de comentar"/>
+              </button>
                 <p>132</p>
             </CommentButtonContainer>
         </PostDetails>

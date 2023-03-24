@@ -1,14 +1,17 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import Logo from "../../assets/logo.svg"
 import { TOKEN_NAME } from "../../constants/url";
 import NotFoundPage from '../../pages/NotFoundPage/NotFoundPage'
-import { goToLoginPage } from "../../routes/coordinator";
-import { HeaderContainer } from "./style";
+import { goToHomePage, goToLoginPage } from "../../routes/coordinator";
+import { HeaderCommentPage, HeaderContainer } from "./style";
+import CloseIcon from "../../assets/close-icon.svg"
 
 function Header(){
     const navigate = useNavigate()
 
     const location = useLocation()
+
+    const pathParams = useParams()
 
     const logout = () => {
         window.localStorage.removeItem(TOKEN_NAME)
@@ -20,16 +23,26 @@ function Header(){
             case "/signup":
                 return (
                     <HeaderContainer>
-                        <img src={Logo} alt="logo do labeddit"/>
+                        <img src={Logo} alt="Logo do labeddit"/>
                         <button onClick={logout}>Entrar</button>
                     </HeaderContainer>
                 )
             case "/home": 
                 return(
                     <HeaderContainer>
-                        <img src={Logo} alt="logo do labeddit"/>
+                        <img src={Logo} alt="Logo do labeddit"/>
                         <button onClick={logout}>Logout</button>
                     </HeaderContainer>
+                )
+            case (`/comments/${pathParams.postId}`): 
+                return(
+                    <HeaderCommentPage>
+                        <button onClick={() => goToHomePage(navigate)}>
+                            <img src={CloseIcon} alt="Botão de fechar aba de comentário"/>
+                        </button>
+                        <img src={Logo} alt="Logo do labeddit"/>
+                        <button onClick={logout}>Logout</button>
+                    </HeaderCommentPage>
                 )
             default:
                 return (
