@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Header from '../../components/Header/Header';
 import { BASE_URL, TOKEN_NAME } from '../../constants/url';
-import { goToLoginPage } from '../../routes/coordinator';
+import { goToHomePage } from '../../routes/coordinator';
 import { SignupContainer } from './SignupPage.style'
 
 const SignupPage = () => {
@@ -26,7 +26,8 @@ const SignupPage = () => {
   const signup = async (event) => {
     event.preventDefault()
 
-    if (isChecked === true) {
+    console.log(isChecked)
+    
       try {
         setIsLoading(true);
 
@@ -40,13 +41,12 @@ const SignupPage = () => {
         window.localStorage.setItem(TOKEN_NAME, response.data.token);
 
         setIsLoading(false);
-        goToLoginPage(navigate);
+        goToHomePage(navigate);
       } catch (error) {
         setIsLoading(false);
         console.error(error?.response?.data);
         window.alert(error?.response?.data)
       }
-    }
   };
 
 
@@ -66,7 +66,7 @@ const SignupPage = () => {
                 type="text"
                 value={form.name}
                 onChange={changeForm}
-                placeholder="Apelido"
+                placeholder="Nome"
               />
             </section>
 
@@ -101,7 +101,7 @@ const SignupPage = () => {
                 Eu concordo em receber emails sobre coisas legais <br/> no Labeddit
             </section>
 
-            <button disabled={isLoading} onClick={() => goToLoginPage(navigate)}>Cadastrar</button>
+            <button disabled={isLoading}>Cadastrar</button>
           </form>
 
         </article>

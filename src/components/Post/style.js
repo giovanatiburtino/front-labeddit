@@ -5,7 +5,7 @@ export const PostCard = styled.div`
     height: 10.438rem;
     background: #FBFBFB;
     border: 1px solid #E0E0E0;
-    border-radius: 12px;
+    border-radius: 0.75rem;
     margin-top: 1.5rem;
 
     span{
@@ -27,24 +27,24 @@ export const PostCard = styled.div`
 
 export const PostDetails = styled.div`
     display: flex;
-    gap: 10px;
+    gap: 0.625rem;
     padding-left: 3%;
 `
 
 export const LikeDislikeContainer = styled.div`
-    width: 98px;
-    height: 28px;
+    width: 6.125rem;
+    height: 1.75rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 4.66667px;
-    gap: 8px;
+    gap: 0.5rem;
     border: 0.796748px solid #ECECEC;
-    border-radius: 28px;
+    border-radius: 1.75rem;
 
     img{
-        width: 14px;
-        height: auto;
+        width: 0.875rem;
+        height: 0.875rem;
     }
 
     p{
@@ -62,7 +62,7 @@ export const LikeDislikeContainer = styled.div`
     }
 
     .btn-like:active{
-        background: green;
+        color: green;
     }
 
     .btn-dislike:active{
@@ -71,18 +71,18 @@ export const LikeDislikeContainer = styled.div`
 `
 
 export const CommentButtonContainer = styled.div`
-    width: 65.33px;
-    height: 28px;
+    width: 4.063rem;
+    height: 1.75rem;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 4.66667px;
-    gap: 8px;
+    gap: 0.5rem;
     border: 0.793333px solid #ECECEC;
-    border-radius: 28px;
+    border-radius: 1.75rem;
 
     img{
-        width: 14px;
+        width: 0.875rem;
         height: auto;
     }
 
@@ -91,5 +91,12 @@ export const CommentButtonContainer = styled.div`
         font-weight: 700;
         font-size: 9.56098px;   
         color: #6F6F6F;  
+    }
+
+    button{
+        background: none;
+        border: none;
+        outline: none;
+        cursor: pointer;
     }
 `

@@ -3,13 +3,9 @@ import axios from "axios";
 import { BASE_URL, TOKEN_NAME } from "./constants/url";
 import { GlobalContext } from "./contexts/GlobalContext";
 import Router from "./routes/Router";
-import { useParams } from "react-router-dom";
 
 function App() {
   const [posts, setPosts] = useState([]);
-  const [comments, setComments] = useState([]);
-
-  const pathParams = useParams()
 
   useEffect(() => {
     const token = window.localStorage.getItem(TOKEN_NAME);

@@ -6,6 +6,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { CommentsContainer } from "./CommentPage.style";
 import { goToLoginPage } from "../../routes/coordinator";
 import Comment from "../../components/Comment/Comment";
+import Post from "../../components/Post/Post";
 
 export default function CommentsPage(){
     const navigate = useNavigate()
@@ -15,6 +16,7 @@ export default function CommentsPage(){
     const [isLoading, setIsLoading] = useState(false);
     const [content, setContent] = useState("");
     const [comments, setComments] = useState([]);
+    const [posts, setPosts] = useState([]);
 
     useEffect(() => {
         const token = window.localStorage.getItem(TOKEN_NAME);
@@ -23,6 +25,7 @@ export default function CommentsPage(){
           goToLoginPage(navigate)
         } else {
           fetchComments();
+          getPostById();
         }
       }, [])
 
@@ -74,6 +77,26 @@ export default function CommentsPage(){
           window.alert(error?.response?.data);
         }
       }
+
+      const getPostById = async () => {
+        try {
+          const token = window.localStorage.getItem(TOKEN_NAME);
+    
+          const config = {
+            headers: {
+              Authorization: token
+            }
+          };
+    
+          const response = await axios.get(`${BASE_URL}/posts/${pathParams.postId}/`, config);
+    
+          setPosts(response.data)
+        } catch (error) {
+          console.error(error?.response?.data);
+          window.alert(error?.response?.data)
+        }
+      }
+    
     
 
 
@@ -81,12 +104,15 @@ export default function CommentsPage(){
         <>
             <Header/>
             <CommentsContainer>
+            {posts.map((post) => {
+              return <Post key={post.id} post={post}/>
+            })}
             <form onSubmit={createComment}>
                 <input value={content} onChange={(event) => setContent(event.target.value)} placeholder="Adicionar comentário"/>
                 <button disabled={isLoading}>Responder</button>
             </form>
             {comments.map((comment) => {
-                return <Comment key={comment.id} comment={comment}/>
+                return <Comment key={comment.id} comment={comment} fetchComments={fetchComments}/>
             })}
             </CommentsContainer>
         </>

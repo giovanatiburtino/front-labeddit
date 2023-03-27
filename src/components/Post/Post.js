@@ -45,6 +45,32 @@ function Post(props){
         }
       };
 
+    const dislike = async () => {
+        setIsLoading(true)
+    
+        try {
+          const token = window.localStorage.getItem(TOKEN_NAME);
+    
+          const config = {
+            headers: {
+              Authorization: token
+            }
+          };
+    
+          const body = {
+            like: false
+          }
+    
+          await axios.put(BASE_URL + `/posts/${post.id}/like`, body, config);
+    
+          setIsLoading(false)
+          fetchPosts()
+        } catch (error) {
+          console.error(error?.response?.data);
+          window.alert(error?.response?.data)
+        }
+      };
+
   return (
     <PostCard>
         <span>Enviado por: {post.creator.name}</span> 
@@ -55,7 +81,7 @@ function Post(props){
                     <img src={LikeIcon} alt="Botão de like"/>
                 </button>
                 <p>{post.likes}</p>
-                <button disabled={isLoading} className="btn-dislike">
+                <button disabled={isLoading} className="btn-dislike" onClick={dislike}>
                     <img src={DislikeIcon} alt="Botão de dislike"/>
                 </button>
             </LikeDislikeContainer>
@@ -63,7 +89,6 @@ function Post(props){
               <button onClick={() => goToCommentPage(navigate, post.id)}>
                 <img src={CommentIcon} alt="Botão de comentar"/>
               </button>
-                <p>132</p>
             </CommentButtonContainer>
         </PostDetails>
     </PostCard>

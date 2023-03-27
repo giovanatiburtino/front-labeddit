@@ -12,6 +12,23 @@ export const CommentsContainer = styled.section`
         flex-direction: column;
         align-items: center;
 
+        button{
+            width: 359px;
+            height: 47px;
+            background: linear-gradient(90deg, #FF6489 0%, #F9B24E 100%), #4088CB;
+            border-radius: 12px;
+            border: none;
+            font-family: 'IBM Plex Sans';
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 23px;
+            color: #FFFFFF;
+            margin-top: 1rem;
+            
+            :hover{
+                cursor: pointer;
+            }
+        }
     }
 
     input{
@@ -36,21 +53,5 @@ export const CommentsContainer = styled.section`
         } 
     }
 
-    button{
-        width: 359px;
-        height: 47px;
-        background: linear-gradient(90deg, #FF6489 0%, #F9B24E 100%), #4088CB;
-        border-radius: 12px;
-        border: none;
-        font-family: 'IBM Plex Sans';
-        font-weight: 700;
-        font-size: 18px;
-        line-height: 23px;
-        color: #FFFFFF;
-        margin-top: 1rem;
-        
-        :hover{
-            cursor: pointer;
-        }
-    }
+    
 `
