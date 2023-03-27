@@ -5,7 +5,7 @@ O Labeddit é um Projeto Full Stack de uma rede social que se utiliza de uma API
 ## Índice
 
 - <a href="#-funcionalidades-do-projeto">Funcionalidades do Projeto</a>
-- <a href="#-documentação-postman">Documentação</a>
+- <a href="#-deploy">Deploy</a>
 - <a href="#-tecnologias-utilizadas">Tecnologias utilizadas</a>
 - <a href="#-autores">Autores</a>
 
