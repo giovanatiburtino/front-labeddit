@@ -6,6 +6,7 @@ O Labeddit é um Projeto Full Stack de uma rede social que se utiliza de uma API
 
 - <a href="#-funcionalidades-do-projeto">Funcionalidades do Projeto</a>
 - <a href="#-deploy">Deploy</a>
+- <a href="#-backend">Backend></a>
 - <a href="#-tecnologias-utilizadas">Tecnologias utilizadas</a>
 - <a href="#-autores">Autores</a>
 
@@ -35,6 +36,9 @@ O Labeddit é um Projeto Full Stack de uma rede social que se utiliza de uma API
 ## 💿 Deploy 
 [Link da aplicação](https://front-labeddit.vercel.app/)
 
+
+## 🗃️ Backend
+[Link do repositório do backend](https://github.com/giovanatiburtino/backend-labeddit)
 
 ## 🚀 Tecnologias Utilizadas
 
