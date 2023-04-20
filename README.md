@@ -42,6 +42,8 @@ O Labeddit é um Projeto Full Stack de uma rede social que se utiliza de uma API
 
 ## 🚀 Tecnologias Utilizadas
 
+- Backend
+
 1.[NodeJS](https://nodejs.org/en/)
 
 2.[Typescript](https://www.typescriptlang.org/)
@@ -53,6 +55,12 @@ O Labeddit é um Projeto Full Stack de uma rede social que se utiliza de uma API
 5.[Knex](https://knexjs.org/guide/)
 
 6.[Postman](https://www.postman.com/)
+
+7.[Jest.js](https://jestjs.io/pt-BR/)
+
+- Front-end
+
+1.[React](https://react.dev/)
 
 ## 👩‍💻 Autores
 
